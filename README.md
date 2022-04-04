@@ -210,6 +210,7 @@ class Solution:
 - Time:  O(|V|+|E|)
 	- build adjacency list: O(|E|)
 	- DFS search: go through each vetex and edge only once: O(|V|+|E|)
+不记录input和output的space
 - Space: O(|V|+|E|)
 	- build adjacency list: O(|E|)
 	- status dict: O(|V|)
