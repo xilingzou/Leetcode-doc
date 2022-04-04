@@ -216,7 +216,7 @@ class Solution:
 	- status dict: O(|V|)
 	- recursion: O(|E|)
 
-### 78. Subsets
+### 78. Subsets (类似22）
 Given an integer array _nums_ of unique elements, return all possible subsets.
 #### 理解：
 - 定义好search tree每一层的状态，index, current subset
@@ -256,8 +256,45 @@ class Solution:
         dfs(res, nums, 0, [])
         return res
 ```
+### 139. Word Break
+Given a string _s_ and a dictionary of strings _wordDict_, return True if _s_ cna be segemented into a sequence of one or more dictionary words.
 
+#### 1. Recursion with memoization
+- membership testing: set, dict O(1) much faster than list O(n)
+  转化成set用 in 查找
+- frozenset(list_name): immutable set, can be key in a dict
+- store the result of subporblems with memo array
 
-
+```
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+       
+        # membership testing: set, dict O(1) much faster than list O(n)
+        # 转化成set用 in 查找
+        # frozenset: immutable set, can be key in a dict
+        def wordBreakMemo(s: str, word_dict: FrozenSet[str], start: int, memo):
+            """
+            Recursion with memoization
+            a memo array to store the result of subproblems, memo[i] represents the result of checking s[i:] by recursion
+            return True if s[start:] can be segemented into a sequence of words in word_dict
+            return False otherwise
+            list->set->frozen set
+            """
+            #s[len(s):] is empty
+            if start == len(s):
+                return True
+            if memo[start] != 0:
+                return memo[start]
+            for end in range(start+1, len(s)+1):
+                if s[start:end] in word_dict and wordBreakMemo(s, word_dict, end, memo):
+                    memo[start] = True
+                    return True
+            memo[start] = False
+            return False
+        
+        # use memoization, avoid repeated recursion
+        memo = [0 for _ in range(len(s)+1)]
+        return wordBreakMemo(s, frozenset(wordDict), 0, memo)
+```
 
 
