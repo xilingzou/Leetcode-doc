@@ -138,7 +138,7 @@ class Solution:
 		- visited and checked set: 2|V|
 		- recursion: all nodes chained up |V|
 		
-### 210. Course Schedule II o
+### 210. Course Schedule II 
 A total of _numCourses_ courses labeled from 0 to _numCourses_-1. Given _prerequisites_ where _prerequisites_[i] = [ai,bi], indicates you must take bi before taking ai. Return the ordering of courses
 you should take to finish all courses. Return an empty array if not possible.
 #### 理解：
@@ -205,6 +205,16 @@ class Solution:
                     
         return topological_sorted_order[::-1] if is_possible else []
 ```
+#### Complexity:
+不确定取决于E还是V时，考虑游离unconnected vertices和两点c之间多条边(cycle)
+- Time:  O(|V|+|E|)
+	- build adjacency list: O(|E|)
+	- DFS search: go through each vetex and edge only once: O(|V|+|E|)
+- Space: O(|V|+|E|)
+	- build adjacency list: O(|E|)
+	- status dict: O(|V|)
+	- recursion: O(|E|)
+
 ### 78. Subsets
 Given an integer array _nums_ of unique elements, return all possible subsets.
 #### 理解：
