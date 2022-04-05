@@ -298,7 +298,7 @@ class Solution:
 	
 ```
 
-### 22. Climb Stairs
+### 22. Climb Stairs (类似 746)
 
 #### Recursion with memoization
 ```
@@ -368,6 +368,14 @@ Its optimal solution can be constructed efficiently from optimal solutions of it
 #### Complexity:
 - Time: O(|n|) single loop up to n
 - Space: O(|n|) dp array size n
+
+### Two approaches of Dynamic Programming: 
+#### Top-down (recursion + memoization) 
+Hit the problem in a natural manner and hope that the solutions for the subproblem are already calculated and if they are not calculated, then we calculate them on the way.
+Start with F(n) = F(n-1) + F(n-2), recursively calculate F(n-1), F(n-2)
+#### Bottom up (tabulation)
+Filling up a table from the start
+Start with F(0)=1, F(1)=1, F(2)=F(0)+F(1)
 	
 
 
