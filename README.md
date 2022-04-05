@@ -295,6 +295,79 @@ class Solution:
         # use memoization, avoid repeated recursion
         memo = [0 for _ in range(len(s)+1)]
         return wordBreakMemo(s, frozenset(wordDict), 0, memo)
+	
 ```
+
+### 22. Climb Stairs
+
+#### Recursion with memoization
+```
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        def dfs(left, ways):
+            """
+            left: the number of left cases
+            ways: the number of ways by far
+            return the number of ways in complete left cases
+            """
+            # Base case: the number of left cases<=2
+            if left == 1:
+                # can only take one step
+                # number of ways doesn't change
+                return ways
+            elif left == 2:
+                # can eithre take two one steps
+                # or take one 2-stes
+                return ways*2
+            
+            # check memo
+            # dfs(left, 1)
+            if memo[left-1] != 0:
+                return ways*memo[left-1]
+            
+            # Two ways to take the next step
+            # 1. take one step and continue
+            memo[left-2] = dfs(left-1, 1)
+            
+            # 2. take a two step and continue
+            memo[left-3] = dfs(left-2, 1)
+            return ways*(memo[left-2]+memo[left-3])
+        
+        # number of ways is 1 when the number of left cases is n
+        # use memo array to store the recursion results, avoid repeated recursion
+        # memo[i] represents the dfs(i+1, 1)
+        memo = [0 for _ in range(n)]
+        return dfs(n, 1)
+```
+#### Complexity:
+- Time: O(|n|) size of recursion tree can go up to n
+- Space: O(|n|) the depth of recursion tree can go up tp n
+
+#### 2. Dynamic Programming
+Its optimal solution can be constructed efficiently from optimal solutions of its subproblems.
+```
+ #Dynamic programming
+
+        if n<=2:
+            return n
+        # dp[i] represents ways to reach the (i+1)th step
+        dp = [0 for _ in range(n)]
+
+        # Base case: ways to reach to the 1st step 
+        dp[0] = 1
+        dp[1] = 2
+
+        # two ways to reach the ith step:
+        # take a step from the (i-1)th
+        # take a two-step from the (i-2)th
+        for i in range(2, n):
+            dp[i] = dp[i-1]+dp[i-2]
+
+        return dp[n-1]
+```
+#### Complexity:
+- Time: O(|n|) single loop up to n
+- Space: O(|n|) dp array size n
+	
 
 
