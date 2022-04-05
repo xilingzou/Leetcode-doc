@@ -371,10 +371,10 @@ Its optimal solution can be constructed efficiently from optimal solutions of it
 
 ### Two approaches of Dynamic Programming: 
 #### Top-down (recursion + memoization) 
-Hit the problem in a natural manner and hope that the solutions for the subproblem are already calculated and if they are not calculated, then we calculate them on the way.
+Hit the problem in a natural manner and hope that the solutions for the subproblem are already calculated and if they are not calculated, then we calculate them on the way.<br>
 Start with F(n) = F(n-1) + F(n-2), recursively calculate F(n-1), F(n-2)
 #### Bottom up (tabulation)
-Filling up a table from the start
+Filling up a table from the start. <br>
 Start with F(0)=1, F(1)=1, F(2)=F(0)+F(1)
 	
 
