@@ -378,6 +378,8 @@ Start with F(n) = F(n-1) + F(n-2), recursively calculate F(n-1), F(n-2)
 #### Bottom up (tabulation)
 Filling up a table from the start. <br>
 Start with F(0)=1, F(1)=1, F(2)=F(0)+F(1)
+
+![alt text](https://user-images.githubusercontent.com/102558337/162212291-120272de-47f9-4934-b631-0e7bc2dfa436.png)
 	
 ### 96. Unique Binary Search Trees
 
