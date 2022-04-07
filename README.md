@@ -370,6 +370,8 @@ Its optimal solution can be constructed efficiently from optimal solutions of it
 - Space: O(|n|) dp array size n
 
 ### Two approaches of Dynamic Programming: 
+- 定义好状态
+- 状态间的transition rule
 #### Top-down (recursion + memoization) 
 Hit the problem in a natural manner and hope that the solutions for the subproblem are already calculated and if they are not calculated, then we calculate them on the way.<br>
 Start with F(n) = F(n-1) + F(n-2), recursively calculate F(n-1), F(n-2)
@@ -377,5 +379,55 @@ Start with F(n) = F(n-1) + F(n-2), recursively calculate F(n-1), F(n-2)
 Filling up a table from the start. <br>
 Start with F(0)=1, F(1)=1, F(2)=F(0)+F(1)
 	
+### 96. Unique Binary Search Trees
+
+#### Recursion with memoization
+```
+class Solution:
+    def numTrees(self, n: int) -> int:
+        
+        # Recursion with memoization
+        # 选择了一个root后下分为两个子问题
+        # 问子问题要答案，构建当前问题答案
+        # the number of unique BST only depends on the number of nodes to be structured
+          
+        def dfs(k):
+            if k<=1:
+                return 1
+            if memo[k] != "*":
+                return memo[k]
+            # choose different roots
+            res = 0
+            # i as root
+            for i in range(1, k+1):
+                res += dfs(i-1)*dfs(k-i)
+            memo[k] = res
+            return memo[k]
+        
+        # 0 to n, length n+1
+        memo = ["*" for _ in range(n+1)] 
+        return dfs(n)
+```
+##### Complexity:
+- Time: for loop n, recursion depth log(n): O(nlog(n))
+- Space: recursion stack goes up to O(logn)
+#### Tabulation (Bottom up)
+```
+ # Tabulation (Bottom Up)
+        memo = ["*" for _ in range(n+1)] 
+        memo[0] = 1
+        memo[1] = 1
+        for i in range(2, n+1):
+            res = 0
+            for j in range(1, i+1):
+                res += memo[j-1]*memo[i-j]
+            memo[i] = res
+            
+        return memo[n]
+```
+##### Complexity:
+- Time: Number of iterations sum(i) i=2,...,n, O(|n^2|)
+- Space: O(n)
+
 
 
