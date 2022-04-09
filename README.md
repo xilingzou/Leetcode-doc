@@ -431,5 +431,63 @@ class Solution:
 - Time: Number of iterations sum(i) i=2,...,n, O(|n^2|)
 - Space: O(n)
 
+## 2D Dynamic Programming
+两个变量定义状态
+### 2D Array
+### 63. Unique Path II
+#### 1. Recursion with memoization
+```
+ # Recursion with memoization
+        def dfs(grid, x, y):
+            m = len(grid)
+            n = len(grid[0])
+            # return the number of unique paths from [0][0] to [x][y]
+            if x == 0 and y == 0:
+                return 1
+            # cross the boundary
+            if x>=m or y>=n or x<0 or y<0:
+                return 0
+            # meet obstacle
+            if grid[x][y] == 1:
+                return 0
+            
+            if memo[x][y] != "_":
+                return memo[x][y]
+            # ask from subproblems
+            memo[x][y] = dfs(grid, x-1, y)+dfs(grid, x, y-1)
+            return memo[x][y]
+        
+        # edge case, obstacle at the beginning
+        if obstacleGrid[0][0] == 1:
+            return 0
+        m = len(obstacleGrid)
+        n = len(obstacleGrid[0])
+        memo = [["_" for _ in range(n)] for _ in range(m)]
+        return dfs(obstacleGrid, m-1, n-1)
+```
+
+#### Tabulation
+```
+# Tabulation
+        m = len(obstacleGrid)
+        n = len(obstacleGrid[0])
+        memo = [[0 for _ in range(n)] for _ in range(m)]
+        
+        memo[0][0] = 1
+        for i in range(m):
+            for j in range(n):
+                # covers edge case when obstacleGrid[0][0] == 1
+                if obstacleGrid[i][j] == 1:
+                    memo[i][j] = 0
+                # exlcude [0][0]
+                elif i>0 or j>0:
+                    flagi = 0 if i-1<0 else 1
+                    flagj = 0 if j-1<0 else 1
+                    memo[i][j] = memo[i-1][j]*flagi + memo[i][j-1]*flagj
+        return memo[m-1][n-1]
+```
+
+
+
 
 
