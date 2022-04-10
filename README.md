@@ -487,6 +487,7 @@ class Solution:
         return memo[m-1][n-1]
 ```
 ### Two 1D array
+### 1143 Longest Common Subsequence
 #### Recursion with memoization
 ```
 def dfs(t1, t2, x, y):
