@@ -486,7 +486,49 @@ class Solution:
                     memo[i][j] = memo[i-1][j]*flagi + memo[i][j-1]*flagj
         return memo[m-1][n-1]
 ```
-
+### Two 1D array
+#### Recursion with memoization
+```
+def dfs(t1, t2, x, y):
+            # return the length of longest common subsequence of t1[:x+1] and t2[:y+1]
+            
+            # out of range
+            if x<0 or y<0 or x>=len(t1) or y>=len(t2):
+                return 0
+            if memo[x][y] != "_":
+                return memo[x][y]
+            # ask from subproblems
+            if t1[x] == t2[y]:
+                memo[x][y] = dfs(t1, t2, x-1, y-1) + 1
+            else:
+                memo[x][y] = max(dfs(t1, t2, x-1, y), dfs(t1, t2, x, y-1))
+            return memo[x][y]
+        
+        # initialize 
+        l1 = len(text1)
+        l2 = len(text2)
+        memo = [["_" for _ in range(l2)] for _ in range(l1)]
+        return dfs(text1, text2, l1-1, l2-1)
+```
+#### Tabulation
+```
+ # initialize 
+        l1 = len(text1)
+        l2 = len(text2)
+        # padding
+        memo = [[0 for _ in range(l2+1)] for _ in range(l1+1)]
+        # index for loop is 1 more than the corresponding index of t1 and t2, 0 for padding, loop starts from 1
+        # memo[i][j] represents the result for t1[:i] and t2[:j]
+        for i in range(1, l1+1):
+            for j in range(1, l2+1):
+                if text1[i-1] == text2[j-1]:
+                    memo[i][j] = memo[i-1][j-1] + 1
+                else:
+                    memo[i][j] = max(memo[i-1][j], memo[i][j-1])
+        return memo[l1][l2]
+```
+##### Sum
+- Padding: add 1 more row and 1 more column for memo, index for loop starts from 1 (represents the results for index 0 of t1 and t2)
 
 
 
