@@ -531,6 +531,61 @@ def dfs(t1, t2, x, y):
 ##### Sum
 - Padding: add 1 more row and 1 more column for memo, index for loop starts from 1 (represents the results for index 0 of t1 and t2)
 
+### 304. 
+Calculate the sum of the elements of _matrix_ inside the rectangle defined by its upper left corner (row1, col1) and lower right corner (row2, col2).
+
+#### Recursion with memoization
+```
+class NumMatrix:
+
+    def __init__(self, matrix: List[List[int]]):
+        self.mat = matrix
+        self.m = len(matrix)
+        self.n = len(matrix[0])
+        self.memo = [["*" for _ in range(self.n)] for _ in range(self.m)]
+    
+    # recursion with memoization
+    def dfs(self, r, c):
+        # return the sum of submat from upper left corner [0][0] to lower right corner [r][c]
+            # out of range
+        if r<0 or c<0 or r>=self.m or c>=self.n:
+            return 0
+        if self.memo[r][c] != "*":
+            return self.memo[r][c]
+        if r == 0 and c == 0:
+            return self.mat[0][0]
+        self.memo[r][c] = self.mat[r][c]+self.dfs(r,c-1)+self.dfs(r-1,c)-self.dfs(r-1,c-1)
+        return self.memo[r][c]
+
+    def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
+
+
+    # Your NumMatrix object will be instantiated and called as such:
+    # obj = NumMatrix(matrix)
+    # param_1 = obj.sumRegion(row1,col1,row2,col2)
+
+        
+        return self.dfs(row2, col2) - self.dfs(row2, col1-1) - self.dfs(row1-1, col2) + self.dfs(row1-1, col1-1)
+```
+
+#### Tabulation (padding)
+```
+    def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
+
+
+    # Your NumMatrix object will be instantiated and called as such:
+    # obj = NumMatrix(matrix)
+    # param_1 = obj.sumRegion(row1,col1,row2,col2)
+
+        # padding
+        for i in range(1, self.m+1):
+            for j in range(1, self.n+1):
+                self.memo[i][j] = self.mat[i-1][j-1] + self.memo[i-1][j] + self.memo[i][j-1] - self.memo[i-1][j-1]
+            
+        
+        return self.memo[row2+1][col2+1] - self.memo[row2+1][col1] - self.memo[row1][col2+1] + self.memo[row1][col1]
+    
+```
 
 
 
