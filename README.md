@@ -629,4 +629,5 @@ Given a _piles_ of stones, two players take turns to take the first or last pile
                 memo[i][i+l-1] = max(piles[i]-memo[i+1][i+l-1], piles[i+l-1]-memo[i][i+l-2])
         return memo[0][p-1]>0
 ```
-
+##### Sum:
+- 从search tree 最低端开始，所有length为2的子问题填完了，才开始填length为3的
