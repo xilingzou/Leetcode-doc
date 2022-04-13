@@ -586,6 +586,47 @@ class NumMatrix:
         return self.memo[row2+1][col2+1] - self.memo[row2+1][col1] - self.memo[row1][col2+1] + self.memo[row1][col1]
     
 ```
-
-
+### Two pointers -> a subarray
+### 877. Stone Game
+Given a _piles_ of stones, two players take turns to take the first or last pile of the remaining stones, the one having the most stones wins.
+#### Recursion with memoization
+```
+# Recursion with memoization
+        def dfs(piles, i, j):
+            # return the relative score of the player who takes the first move on the subarray piles[i:j+1]
+            # relative score: the score of the first player - the score of the next player
+            if i == j:
+                return piles[i]
+            # empty array
+            if i>j:
+                return 0
+            if memo[i][j] != -1:
+                return memo[i][j]
+            # max: take the best move
+            memo[i][j] = max(piles[i]-dfs(piles, i+1, j), piles[j]-dfs(piles, i, j-1))
+            return memo[i][j]
+        
+        # Initialize
+        p = len(piles)
+        memo = [[-1 for _ in range(p)] for _ in range(p)]
+        ans = dfs(piles, 0, p-1)
+        return ans>0
+```
+#### Tabulation
+```
+ # Tabulation
+        # 画出search tree, 从search tree最低端开始填
+        # Initialize
+        p = len(piles)
+        # fill invalid (i>j) coordinates with 0
+        memo = [[0 for _ in range(p)] for _ in range(p)]
+        # subarray length == 1
+        for i in range(p):
+            memo[i][i] = piles[i]
+        # subarray length
+        for l in range(2, p+1):
+            for i in range(p-l+1):
+                memo[i][i+l-1] = max(piles[i]-memo[i+1][i+l-1], piles[i+l-1]-memo[i][i+l-2])
+        return memo[0][p-1]>0
+```
 
