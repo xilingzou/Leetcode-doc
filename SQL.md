@@ -18,3 +18,7 @@ start from row n1+1 to count n2 rows
 ![](https://user-images.githubusercontent.com/102558337/175118600-42616ee9-8108-40aa-99de-97f156c94787.png)
 
  - rank starts from 1
+
+## IF
+IF(condition, val_if_true, val_if_false)  
+![](https://user-images.githubusercontent.com/102558337/175315130-6fa2a074-63e9-4d11-9d13-f21d95a0d148.png)
