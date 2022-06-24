@@ -22,3 +22,9 @@ start from row n1+1 to count n2 rows
 ## IF
 IF(condition, val_if_true, val_if_false)  
 ![](https://user-images.githubusercontent.com/102558337/175315130-6fa2a074-63e9-4d11-9d13-f21d95a0d148.png)
+
+## IFNULL
+IFNULL(expression, alter_val): returns the alter_val if expression is null
+
+## CASE 
+![](https://user-images.githubusercontent.com/102558337/175699558-a2fdb9c5-bb6b-461a-a9fa-982a19e558f2.png)
