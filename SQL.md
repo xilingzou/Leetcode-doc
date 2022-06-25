@@ -28,3 +28,8 @@ IFNULL(expression, alter_val): returns the alter_val if expression is null
 
 ## CASE 
 ![](https://user-images.githubusercontent.com/102558337/175699558-a2fdb9c5-bb6b-461a-a9fa-982a19e558f2.png)
+
+## UNION
+![](https://user-images.githubusercontent.com/102558337/175783553-efea073f-f131-4e34-bb40-927c149b3f58.png)
+- Two tables have the same number of columns
+- same data types in the same order
