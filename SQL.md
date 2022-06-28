@@ -33,3 +33,6 @@ IFNULL(expression, alter_val): returns the alter_val if expression is null
 ![](https://user-images.githubusercontent.com/102558337/175783553-efea073f-f131-4e34-bb40-927c149b3f58.png)
 - Two tables have the same number of columns
 - same data types in the same order
+
+## POWER
+POWER(x, y): x^y  
