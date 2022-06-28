@@ -1,5 +1,6 @@
 ## General
-- You can't use the name after AS in your SELECT statement, use t1.col  
+- You need to rename the columns if duplicate
+- but can't use the name after AS in your SELECT statement, use the original t1.col  
 
 ## DELETE
 DELETE FROM [table_Name]
