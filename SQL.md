@@ -1,3 +1,6 @@
+## General
+- You can't use the name after AS in your SELECT statement, use t1.col  
+
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
