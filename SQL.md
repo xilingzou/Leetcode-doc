@@ -1,6 +1,8 @@
 ## General
 - You need to rename the columns if duplicate
 - but can't use the name after AS in your SELECT statement, use the original t1.col  
+- count (exp) & count(distinct exp)
+![](https://user-images.githubusercontent.com/102558337/176285412-5509257b-5163-4f51-abe6-c197dd3eb8ec.png)
 
 ## DELETE
 DELETE FROM [table_Name]
@@ -10,8 +12,9 @@ WHERE [condition]
 DELETE p1 FROM Person p1, Person p2
 WHERE p1.email = p2.email AND p1.id>p2.id
 ```
-## DATEDIFF
-DATEDIFF(date1, date2): date1 - date2
+## DATEDIFF (between two date values)
+DATEDIFF(date1, date2): date1 - date2  
+date1 > date2
 
 ## LIMIT n1, n2
 start from row n1+1 to count n2 rows 
@@ -40,3 +43,5 @@ IFNULL(expression, alter_val): returns the alter_val if expression is null
 
 ## POWER
 POWER(x, y): x^y  
+
+
