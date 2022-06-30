@@ -48,4 +48,5 @@ IFNULL(expression, alter_val): returns the alter_val if expression is null
 ## POWER
 POWER(x, y): x^y  
 
-
+## COALESCE
+COALESCE(val1, val2, ..., valn, ...): returns the first value that is not null in the list  
