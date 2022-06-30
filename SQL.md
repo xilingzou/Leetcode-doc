@@ -52,4 +52,6 @@ POWER(x, y): x^y
 COALESCE(val1, val2, ..., valn, ...): returns the first value that is not null in the list  
 
 ## UPDATE
+![](https://user-images.githubusercontent.com/102558337/176744166-981aa979-40a6-4690-b1ca-c39a4e9e719e.png)
+
 ![](https://user-images.githubusercontent.com/102558337/176744029-4986b9d0-4cf3-4355-9e84-080bb97d70e9.png)
