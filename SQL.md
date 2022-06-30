@@ -26,7 +26,7 @@ start from row n1+1 to count n2 rows
 
  - rank starts from 1
  - assign the same rank to tie, and then continue with the next consecutive number
- **comparison among RANK(), DENSE_RANK(), ROW_NUMBER()
+ **comparison among RANK(), DENSE_RANK(), ROW_NUMBER()  
  ![](https://user-images.githubusercontent.com/102558337/176566759-cddce8ce-b07d-44de-81dd-31e9582feafb.png)
 
 
