@@ -6,7 +6,29 @@
 - NOT IN (subquery)-> JOIN subquery_table WHERE IS NULL/NOT NULL  
 IN/NOT IN，不能直接接table，要用到subquery （SELECT FROM table)，可以转化为JOIN，并用WHERE IS NULL/NOT NULL  
 - 遇到JOIN: 主动clarify用什么JOIN, what key to JOIN ON, and why (练习时写下comment)
+- 条件多的时候，可以在JOIN前filter out vaild rows
+```
+WITH available AS
+(SELECT *
+FROM Books
+WHERE available_from <= '2019-05-23'),
+available_order AS
+(SELECT *
+FROM Orders
+WHERE dispatch_date <= '2019-06-23'
+    AND dispatch_date >= '2018-06-23')
 
+SELECT
+    t1.book_id,
+    t1.name
+FROM available t1
+LEFT JOIN available_order t2
+    ON  t1.book_id = t2.book_id
+GROUP BY t1.book_id
+HAVING 
+    SUM(quantity) < 10
+    OR SUM(quantity) IS NULL
+```
 
 
 ## DELETE
