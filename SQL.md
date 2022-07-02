@@ -1,8 +1,13 @@
 ## General
-- You need to rename the columns if duplicate
-- but can't use the name after AS in your SELECT statement, use the original t1.col  
+- Always specify the source table when selecting columns (a good habit)
+- Can't use the renamed name after AS in your SELECT statement, use the original t1.col  
 - count (exp) & count(distinct exp)
 ![](https://user-images.githubusercontent.com/102558337/176285412-5509257b-5163-4f51-abe6-c197dd3eb8ec.png)
+- NOT IN (subquery)-> JOIN subquery_table WHERE IS NULL/NOT NULL  
+IN/NOT IN，不能直接接table，要用到subquery （SELECT FROM table)，可以转化为JOIN，并用WHERE IS NULL/NOT NULL  
+- 遇到JOIN: 主动clarify用什么JOIN, what key to JOIN ON, and why (练习时写下comment)
+
+
 
 ## DELETE
 DELETE FROM [table_Name]
