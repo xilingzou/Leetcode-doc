@@ -48,7 +48,10 @@ DATE_ADD(date, INTERVAL value addunit)
 ![](https://user-images.githubusercontent.com/102558337/177012721-313bdb36-b182-4636-b4d9-75f3860be30c.png)  
 ![](https://user-images.githubusercontent.com/102558337/177012739-7f990201-9161-4b27-80cc-0a4a0b472282.png)
 
-
+## YEAR(), MONTH(), DAY()
+- YEAR(date)
+- MONTH(date)
+- DAY(date)
 
 ## LIMIT n1, n2
 start from row n1+1 to count n2 rows 
