@@ -92,3 +92,7 @@ COALESCE(val1, val2, ..., valn, ...): returns the first value that is not null i
 ![](https://user-images.githubusercontent.com/102558337/176744166-981aa979-40a6-4690-b1ca-c39a4e9e719e.png)
 
 ![](https://user-images.githubusercontent.com/102558337/176744029-4986b9d0-4cf3-4355-9e84-080bb97d70e9.png)
+
+## CONCAT
+combine strings or column values together  
+![](https://user-images.githubusercontent.com/102558337/177172196-ea6d19a9-9a60-4e13-8738-2c6c2a3e6157.png)
