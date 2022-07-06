@@ -28,7 +28,13 @@ df.iloc[1:5, 2:5]
 - axis = 1, apply function to each row
 
 
+## pd.Sereis.str.split (string or regex to split on: like ',', expand = whether to expand the split strings into seperate columns)
+**Returns**
+- if expand = True: returns DataFrame with expanded columns
+- if expand = False: returns Series containing lists of strings 
 
+## pd.DataFrame.merge (right_df, how={'left','right','outer','inner','cross'}, default 'inner', on = column name or list of column names in both dfs, left_on: the column name in the left df to join on, right_on, sort: whether to sort the join keys)
+![](https://user-images.githubusercontent.com/102558337/177630276-a5fe56d2-2f24-454b-8f1d-33df0ddc4739.png)
 
 ### Get the index of a row whose column matches values
 ```
