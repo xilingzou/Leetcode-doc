@@ -22,6 +22,14 @@ df.iloc[[0, 2, 4, 8]]
 ```
 df.iloc[1:5, 2:5]
 ```
+## apply
+1. **axis**
+- axis = 0, apply function to each column
+- axis = 1, apply function to each row
+
+
+
+
 ### Get the index of a row whose column matches values
 ```
 df.index[df['column_name']==value].tolist()
