@@ -8,7 +8,10 @@ IN/NOT IN，不能直接接table，要用到subquery （SELECT FROM table)，可
 - 遇到JOIN: 主动clarify用什么JOIN, what key to JOIN ON, and why (练习时写下comment)
 - 条件多的时候，可以在JOIN前filter out vaild rows
 - 要求返回top 3 (if less than 3 records then top 2 or top 1), use window functions like ROW_NUMBER, RANK()
-- 
+- 只能用一个WITH clause, 多个temp table
+WITH temp1 AS(),
+temp2 AS (),
+temp3 AS ()
 ```
 WITH available AS
 (SELECT *
