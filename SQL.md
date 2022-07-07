@@ -58,6 +58,7 @@ DATE_ADD(date, INTERVAL value addunit)
 ## LIMIT n1, n2
 start from row n1+1 to count n2 rows 
 ![](https://user-images.githubusercontent.com/102558337/175049520-e668ab34-d329-4e50-bc5d-73cccf5dec6d.png)
+- Also: SELECT * FROM table LIMIT n2 OFFSET n1 (skip the first n1 rows, start from n1+1)
 
 ## DENSE_RANK() (PARTITION BY [] ORDER BY [] ASC/DESC) rename
 ![](https://user-images.githubusercontent.com/102558337/175118510-c09668ee-2bad-417e-9549-fdc9d7d9ba52.png)
