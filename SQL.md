@@ -57,13 +57,13 @@ DATE_ADD(date, INTERVAL value addunit)
 
 ## DATE_FORMAT(date, format)
 ```
-SELECT DATE_FORMAT("2020-11-23", "%M %D %y)
+SELECT DATE_FORMAT("2020-11-23", "%M %D %y")
 November 23rd 2020
 
-SELECT DATE_FORMAT("2020-11-23", "%M %d %y)
+SELECT DATE_FORMAT("2020-11-23", "%M %d %y")
 November 23 2020
 
-SELECT DATE_FORMAT("2020/11/23", "%y-%m-%d)
+SELECT DATE_FORMAT("2020/11/23", "%y-%m-%d")
 2020-11-23
 ```
 
