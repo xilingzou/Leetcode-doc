@@ -69,6 +69,10 @@ November 23 2020
 SELECT DATE_FORMAT("2020/11/23", "%y-%m-%d")
 2020-11-23
 ```
+## BETWEEN
+expression BETWEEN val1 AND val2
+![](https://user-images.githubusercontent.com/102558337/178010507-c71bc2d4-d1c9-4023-bd25-2bd992ce4749.png)  
+![](https://user-images.githubusercontent.com/102558337/178010596-5027d572-e97c-4c61-b6dd-4f52a61e2361.png)
 
 ## LIMIT n1, n2
 start from row n1+1 to count n2 rows 
