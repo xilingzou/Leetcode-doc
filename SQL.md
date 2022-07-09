@@ -35,7 +35,18 @@ HAVING
     SUM(quantity) < 10
     OR SUM(quantity) IS NULL
 ```
-
+- 可以直接GROUP BY, 在HAVING里出现aggregation function构成筛选条件
+```
+SELECT
+	business_id
+FROM Events e
+JOIN temp
+	ON e.event_type = temp.event_type
+GROUP BY business_id
+HAVING SUM(CASE
+		WHEN temp.avg_activity < e.occurences THEN 1 ELSE 0
+	END) > 1
+```
 
 ## DELETE
 DELETE FROM [table_Name]
