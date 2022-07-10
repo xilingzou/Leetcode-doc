@@ -47,7 +47,7 @@ HAVING SUM(CASE
 		WHEN temp.avg_activity < e.occurences THEN 1 ELSE 0
 	END) > 1
 ```
-
+- 增加column: select statement; 增加row: 
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
