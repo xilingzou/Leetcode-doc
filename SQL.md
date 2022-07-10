@@ -49,6 +49,8 @@ HAVING SUM(CASE
 ```
 - 增加column: select statement; 增加row: UNION
 - SELECT distinct rows based on multiple columns: GROUP BY these columns at last
+- SUM(CASE WHEN)
+- 尽量避免反复JOIN一个table, 考虑简化
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
