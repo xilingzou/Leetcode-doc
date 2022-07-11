@@ -51,6 +51,15 @@ HAVING SUM(CASE
 - SELECT distinct rows based on multiple columns: GROUP BY these columns at last
 - SUM(CASE WHEN)
 - 尽量避免反复JOIN一个table, 考虑简化
+- You can use a column in group by that is not selected, but can't select a column but not appear in group by
+```
+SELECT
+	DISTINCT viewer_id AS id
+FROM Views 
+GROUP BY view_date, viewer_id
+HAVING COUNT(DISTINCT article_id)> 1
+ORDER BY id
+```
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
