@@ -63,6 +63,16 @@ GROUP BY view_date, viewer_id
 HAVING COUNT(DISTINCT article_id)> 1
 ORDER BY id
 ```
+- SELECT新创建的column，不便用column name，可以用数字代表 ORDER BY 1, 2
+```
+SELECT
+	CASE
+		WHEN continent = 'Asia' THEN name ELSE NUll
+	END AS `Asia`
+FROM Student
+WHERE continent = 'Asia'
+ORDER BY 1
+```
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
