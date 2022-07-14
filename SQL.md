@@ -48,6 +48,9 @@ HAVING SUM(CASE
 	END) > 1
 ```
 - 增加column: select statement; 增加row: UNION
+合并两个table：
+	- 横向：SELECT * FROM tab1, tab2; JOIN without ON (SELECT * FROM tab1 JOIN tab2)
+	- 纵向： UNION
 - SELECT distinct rows based on multiple columns: GROUP BY these columns at last
 - SUM(CASE WHEN)
 - 尽量避免反复JOIN一个table, 考虑简化
