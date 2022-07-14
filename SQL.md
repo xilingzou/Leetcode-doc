@@ -155,3 +155,12 @@ COALESCE(val1, val2, ..., valn, ...): returns the first value that is not null i
 ## CONCAT
 combine strings or column values together  
 ![](https://user-images.githubusercontent.com/102558337/177172196-ea6d19a9-9a60-4e13-8738-2c6c2a3e6157.png)
+
+## LEFT JOIN union REIGHT JOIN as a full outer join(no syntax as full outer join)
+```
+SELECT * FROM t1
+LEFT JOIN t2 ON t1.id = t2.id
+UNION
+SELECT * FROM t1
+RIGHT JOIN t2 ON t1.id = t2.id
+```
