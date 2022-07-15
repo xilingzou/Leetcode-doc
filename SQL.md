@@ -130,6 +130,14 @@ start from row n1+1 to count n2 rows
  - **comparison among RANK(), DENSE_RANK(), ROW_NUMBER()**  
  ![](https://user-images.githubusercontent.com/102558337/176566759-cddce8ce-b07d-44de-81dd-31e9582feafb.png)
 ## FIRST_VALUE() OVER (partition by [] ORDER BY[])
+## LAG(express, offset, default_val) OVER (PARTITION BY [] ORDER BY [])
+- offset: the num of rows back from the current row to get the val
+- defualt val: if no preceding rows, return
+```
+SELECT
+	LAG(login_ts, 1) OVER (PARTITION BY cust_id ORDER BY login_ts DESC) AS last_login_ts
+FROM t1
+```
 ## IF
 IF(condition, val_if_true, val_if_false)  
 ![](https://user-images.githubusercontent.com/102558337/175315130-6fa2a074-63e9-4d11-9d13-f21d95a0d148.png)
