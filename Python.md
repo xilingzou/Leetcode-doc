@@ -65,3 +65,5 @@ for i in range(len(df)):
 ```
 df.apply(lambda row: row["Name"] + " " + str(row["Percentage"]), axis=1) 
 ```
+## split()
+string_to_be_splitted.split(seperator, maxsplit)
