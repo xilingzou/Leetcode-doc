@@ -73,6 +73,10 @@ FROM Student
 WHERE continent = 'Asia'
 ORDER BY 1
 ```
+- ROUND 放在最后一个求值（如AVG）位置
+- 注意SUM(CASE WHEN)不能排除duplicates, 要确认是否可以用
+- 每个COUNT()注意是否要加DISTINCT （问出来是否有duplicates)
+- self join考点 （常考，说出这个term)
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
