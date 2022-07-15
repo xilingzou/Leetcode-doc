@@ -77,6 +77,7 @@ ORDER BY 1
 - 注意SUM(CASE WHEN)不能排除duplicates, 要确认是否可以用
 - 每个COUNT()注意是否要加DISTINCT （问出来是否有duplicates)
 - self join考点 （常考，说出这个term)
+- average 除了用aggregation AVG, 还可以直接数量/总数，可能可以免去另写一个table做aggregation
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
