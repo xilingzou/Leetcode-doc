@@ -67,3 +67,6 @@ df.apply(lambda row: row["Name"] + " " + str(row["Percentage"]), axis=1)
 ```
 ## split()
 string_to_be_splitted.split(seperator, maxsplit)
+
+## strip()
+string_to_do.strip(char)  char: to be removed at the **beginning or ending** of the string
