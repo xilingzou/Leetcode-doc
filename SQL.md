@@ -78,6 +78,9 @@ ORDER BY 1
 - 每个COUNT()注意是否要加DISTINCT （问出来是否有duplicates)
 - self join考点 （常考，说出这个term)
 - average 除了用aggregation AVG, 还可以直接数量/总数，可能可以免去另写一个table做aggregation
+- COUNT(expression) only count the number of non-null values  
+![](https://user-images.githubusercontent.com/102558337/179357750-da61439b-2300-4643-ba83-d690a498ff7a.png)
+![](https://user-images.githubusercontent.com/102558337/179357771-b4a973c6-b9f8-4bb4-ae75-86f170b78427.png)
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
