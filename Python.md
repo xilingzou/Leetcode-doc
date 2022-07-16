@@ -77,3 +77,6 @@ string_to_do.strip(char)  char: to be removed at the **beginning or ending** of 
 - a: list or an integer to draw the sample from; if it's an integer n, the list is range(n)(0 to n-1)
 - output_size: int or tuple of ints
 
+## dict.get(key, alt_value)
+- get the value of key
+- alt_value: return it if the key doesn't exist here
