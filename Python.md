@@ -65,8 +65,15 @@ for i in range(len(df)):
 ```
 df.apply(lambda row: row["Name"] + " " + str(row["Percentage"]), axis=1) 
 ```
-## split()
+## String Operations 
+### split()
 string_to_be_splitted.split(seperator, maxsplit)
 
-## strip()
+### strip()
 string_to_do.strip(char)  char: to be removed at the **beginning or ending** of the string
+
+## Random
+### random.choice(a, output_shape, with/out_replacement, prob_of_vals_in_a)
+- a: list or an integer to draw the sample from; if it's an integer n, the list is range(n)(0 to n-1)
+- output_size: int or tuple of ints
+
