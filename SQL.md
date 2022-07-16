@@ -81,6 +81,18 @@ ORDER BY 1
 - COUNT(expression) only count the number of non-null values  
 ![](https://user-images.githubusercontent.com/102558337/179357750-da61439b-2300-4643-ba83-d690a498ff7a.png)
 ![](https://user-images.githubusercontent.com/102558337/179357771-b4a973c6-b9f8-4bb4-ae75-86f170b78427.png)
+- 双向无差别的columns （例如caller and recipient在“通电话”意义上）为了方便可以互换名称合并（union)数据
+```
+SELECT
+	caller_id AS user_id,
+	recipient_id
+FROM calls
+UNION
+SELECT
+	recipient_id AS user_id,
+	caller_id AS recipient_id
+FROM calls
+```
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
