@@ -93,6 +93,18 @@ SELECT
 	caller_id AS recipient_id
 FROM calls
 ```
+- Calculate moving average (self join on a range of differences on keys)
+```
+SELECT
+    t1.visited_on,
+    SUM(t2.amount) AS amount,
+    ROUND(AVG(t2.amount), 2) AS average_amount
+FROM temp t1
+JOIN temp t2
+    ON DATEDIFF(t1.visited_on, t2.visited_on) BETWEEN 0 AND 6
+GROUP BY t1.visited_on
+HAVING COUNT(t2.visited_on) = 7
+```
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
