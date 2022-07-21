@@ -117,8 +117,9 @@ WHERE p1.email = p2.email AND p1.id>p2.id
 DATEDIFF(date1, date2): date1 - date2  
 date1 > date2
 
-## DATE_ADD()
+## DATE_ADD()/DATE_SUB()
 DATE_ADD(date, INTERVAL value addunit)  
+DATE_SUB(date, INTERVAL value addunit)
 ![](https://user-images.githubusercontent.com/102558337/177012721-313bdb36-b182-4636-b4d9-75f3860be30c.png)  
 ![](https://user-images.githubusercontent.com/102558337/177012739-7f990201-9161-4b27-80cc-0a4a0b472282.png)
 
