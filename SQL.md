@@ -203,3 +203,5 @@ UNION
 SELECT * FROM t1
 RIGHT JOIN t2 ON t1.id = t2.id
 ```
+## GREATEST & LEAST (arg1, arg2, arg3...)
+return the largest or smallest number among multiple arguments
