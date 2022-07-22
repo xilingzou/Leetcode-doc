@@ -157,7 +157,7 @@ start from row n1+1 to count n2 rows
  - assign the same rank to tie, and then continue with the next consecutive number  
  - **comparison among RANK(), DENSE_RANK(), ROW_NUMBER()**  
  ![](https://user-images.githubusercontent.com/102558337/176566759-cddce8ce-b07d-44de-81dd-31e9582feafb.png)
-## FIRST_VALUE() OVER (partition by [] ORDER BY[])
+## FIRST_VALUE(expression) OVER (partition by [] ORDER BY[])
 ## LAG(express, offset, default_val) OVER (PARTITION BY [] ORDER BY [])
 - offset: the num of rows back from the current row to get the val
 - defualt val: if no preceding rows, return
