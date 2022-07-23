@@ -230,3 +230,14 @@ RIGHT JOIN t2 ON t1.id = t2.id
 ```
 ## GREATEST & LEAST (arg1, arg2, arg3...)
 return the largest or smallest number among multiple arguments
+## test query
+```
+select concat( 'sanity check on # trip_id: ', 
+
+    case when
+
+    (select count(trip_id) from trip_initiated) = (select count(trip_id) from dispatched_events)
+
+    then 'passed' else 'failed' end);
+
+```
