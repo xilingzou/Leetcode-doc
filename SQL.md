@@ -105,6 +105,25 @@ JOIN temp t2
 GROUP BY t1.visited_on
 HAVING COUNT(t2.visited_on) = 7
 ```
+- 除法int/int结果也是int，转换类型：
+1. CAST expr AS float
+2. times 1.0
+
+## 面试
+1. confirm output
+没说明output应该是什么样的情况，和面试官confirm
+2. 写题顺序先写  
+```
+SELECT
+FROM table t1
+JOIN table t2
+```
+框架，再写filter conditions (WHERE)，最后补充需要的columns
+3. JOIN: address INNER/LEFT JOIN (justification)
+4. COUNT时务必想是否有duplicates （思考并发问）： 
+- 判断是否有duplicates:  
+JOIN ON t1.col = t2.col, 看t2 col里有无duplicates，想是什么情形并confirm是否有
+- 不确定就加DISTINCT
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
@@ -186,6 +205,11 @@ POWER(x, y): x^y
 
 ## COALESCE
 COALESCE(val1, val2, ..., valn, ...): returns the first value that is not null in the list  
+可以用作JOIN条件：
+```
+JOIN t2
+	ON COALESCE(t1.c1, t1.c2) = t2.c3
+```
 
 ## UPDATE
 ![](https://user-images.githubusercontent.com/102558337/176744166-981aa979-40a6-4690-b1ca-c39a4e9e719e.png)
