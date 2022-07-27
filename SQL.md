@@ -108,7 +108,8 @@ HAVING COUNT(t2.visited_on) = 7
 - 除法int/int结果也是int，转换类型：
 1. CAST expr AS float
 2. times 1.0
-- 同一个属性，多个品类在不同table (如web, mobile)：可以先UNION （建一个新column platform, 其他columns都保持一样）
+- 同一个属性，多个品类在不同table (如web, mobile)：可以先UNION （建一个新column platform, 其他columns都保持一样）再进行统一select操纵；需要用到CASE WHEN
+- 筛选条件多个时可用WHERE+list，WHERE NOT IN/IN ('a','b')
 ## 面试
 1. confirm output
 没说明output应该是什么样的情况，和面试官confirm
