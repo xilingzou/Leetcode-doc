@@ -186,6 +186,15 @@ SELECT
 	LAG(login_ts, 1) OVER (PARTITION BY cust_id ORDER BY login_ts DESC) AS last_login_ts
 FROM t1
 ```
+### SUM(exp) OVER(PARTITION BY __ ORDER BY__)
+cumulative sum
+```
+SELECT
+	customer_id,
+	order_dt,
+	SUM(amount) OVER(PARTITION BY customer_id ORDER BY order_dt) AS cumulative_spend
+FROM daily_spent
+```
 ## IF
 IF(condition, val_if_true, val_if_false)  
 ![](https://user-images.githubusercontent.com/102558337/175315130-6fa2a074-63e9-4d11-9d13-f21d95a0d148.png)
