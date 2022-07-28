@@ -229,6 +229,12 @@ JOIN t2
 ## CONCAT
 combine strings or column values together  
 ![](https://user-images.githubusercontent.com/102558337/177172196-ea6d19a9-9a60-4e13-8738-2c6c2a3e6157.png)
+## SUBSTRING (str, pos_to_start, length)
+```
+SELECT SUBSTRING('w3resource',4,3); 
+
+```
+output: 'eso'
 
 ## LEFT JOIN union REIGHT JOIN as a full outer join(no syntax as full outer join)
 ```
