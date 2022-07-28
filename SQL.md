@@ -236,6 +236,9 @@ SELECT SUBSTRING('w3resource',4,3);
 ```
 output: 'eso'
 
+## LOWER(str)
+to lowercase
+
 ## LEFT JOIN union REIGHT JOIN as a full outer join(no syntax as full outer join)
 ```
 SELECT * FROM t1
