@@ -121,10 +121,14 @@ JOIN table t2
 ```
 框架，再写filter conditions (WHERE)，最后补充需要的columns
 3. JOIN: address INNER/LEFT JOIN (justification)
+说：We want or don't need to keep all the records in the left table (with context)
 4. COUNT时务必想是否有duplicates （思考并发问）： 
 - 判断是否有duplicates:  
 JOIN ON t1.col = t2.col, 看t2 col里有无duplicates，想是什么情形并confirm是否有
 - 不确定就加DISTINCT
+5. Problem solving 类型：
+定义metric: count, sum, average
+6. 说出edge cases， 如何考虑 is a plus
 ## DELETE
 DELETE FROM [table_Name]
 WHERE [condition]
