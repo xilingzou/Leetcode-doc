@@ -260,3 +260,8 @@ select concat( 'sanity check on # trip_id: ',
     then 'passed' else 'failed' end);
 
 ```
+## 好题
+![](https://user-images.githubusercontent.com/102558337/181800910-ad89ed24-e07c-478c-bbb4-12bf0fa5c199.png)
+
+![](https://user-images.githubusercontent.com/102558337/181800834-266731c7-6165-4288-a86c-3ff74d4bfd3b.png)
+- 因为要count(distinct)不能直接sum(case when)去数customer, 而是创一个'platform'column (根据spend),count(distinct) group by this column
