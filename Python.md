@@ -1,3 +1,9 @@
+# General
+1. 最常考的：for loop, list, dict
+2. 特别公司特别准备：
+  - generate random variable ~ certain distribution
+  - string date -> date format, date difference
+
 # Methods
 ## loc & iloc functions
 **loc** needs to specify the name of the row or column (label-based)  
