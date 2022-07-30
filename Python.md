@@ -80,3 +80,6 @@ string_to_do.strip(char)  char: to be removed at the **beginning or ending** of 
 ## dict.get(key, alt_value)
 - get the value of key
 - alt_value: return it if the key doesn't exist here
+
+## defaultdict(int, list, set...)
+never raise key errors, for non-existent keys, set a default value (0, [], ())
